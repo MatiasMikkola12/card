@@ -1,0 +1,58 @@
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg); }
+
+.flip-container, .front, .back {
+  height: 56vw;
+  width: 40vw; }
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative; }
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+  background-color: lightgray; }
+  .front .icon {
+    width: 8vw;
+    height: 8vw; }
+  .front .red {
+    fill: red;
+    color: red; }
+  .front .middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+  .front .middle svg {
+    flex: 1 0 50%; }
+  .front .middle-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transform: rotate(180deg); }
+  .front .middle-2 svg {
+    flex: 1 0 50%; }
+  .front .bottom-right {
+    transform: rotate(180deg); }
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  background-color: yellow; }
+
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+  transform: rotateY(180deg); }
+
+/*# sourceMappingURL=main.css.map */
